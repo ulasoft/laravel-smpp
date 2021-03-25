@@ -1,5 +1,5 @@
 {
-  "name": "franzose/laravel-smpp",
+  "name": "ulasoft/laravel-smpp",
   "description": "SMS sending via SMPP protocol for Laravel framework.",
   "keywords": ["sms", "smpp", "laravel", "onlinecity"],
   "authors": [
@@ -11,7 +11,7 @@
   "require": {
     "ext-mbstring": "*",
     "php-smpp/php-smpp": "1.2",
-    "illuminate/support": "^5|^6|^7"
+    "illuminate/support": "^5|^6|^7|^8"
   },
   "autoload": {
     "psr-4": {
