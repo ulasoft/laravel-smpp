@@ -1,7 +1,7 @@
 {
   "name": "ulasoft/laravel-smpp",
   "description": "SMS sending via SMPP protocol for Laravel framework.",
-  "keywords": ["sms", "smpp", "laravel", "onlinecity"],
+  "keywords": ["sms", "smpp", "laravel", "onlinecity", "ulasoft"],
   "authors": [
     {
       "name": "Jan Iwanow",
