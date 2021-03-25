@@ -21,7 +21,7 @@ class LaravelSmppServiceProvider extends ServiceProvider
     {
         $this->loadTranslationsFrom(__DIR__ . '/../lang', 'laravel-smpp');
         $this->publishes([
-            __DIR__ . '/../config/laravel-smpp.php' => config_path('laravel-smpp.php'),
+            __DIR__ . '/../config/laravel-smpp.php' => app()->basePath( ) . '/config/laravel-smpp.php',
         ]);
     }
 
