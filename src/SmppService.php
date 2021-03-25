@@ -160,9 +160,9 @@ class SmppService implements SmppServiceInterface
                 $transport->close();
                 $this->smpp = null;
 
-                if (in_array($ex->getCode(), $this->catchables)) {
+//                if (in_array($ex->getCode(), $this->catchables)) {
                     continue;
-                }
+//                }
 
                 throw $ex;
             }
@@ -227,7 +227,15 @@ class SmppService implements SmppServiceInterface
     {
         $message = mb_convert_encoding($message, 'UCS-2', 'utf8');
 
-        return $this->smpp->sendSMS($sender, $this->getRecipient($recipient), $message, null, SMPP::DATA_CODING_UCS2);
+        try {
+            $sms =  $this->smpp->sendSMS($sender, $this->getRecipient($recipient), $message, null, SMPP::DATA_CODING_UCS2);
+        } catch (Exception $exception) {
+            Log::error("ERROR BERDI LN Qayta retry qvordu");
+            $this->sendOne($recipient, $message);
+            return;
+        }
+
+        return $sms;
     }
 
     /**
