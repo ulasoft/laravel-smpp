@@ -207,6 +207,7 @@ class SmppService implements SmppServiceInterface
             $prefix = 'destination';
         }
 
+
         return new SmppAddress(
             $phone,
             hexdec($this->getConfig(sprintf('%s_ton', $prefix))),
